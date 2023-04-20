@@ -3,7 +3,7 @@ const init = () => {
 
   inputForm.addEventListener('submit', (e) => {
     e.preventDefault(e)
-    const input = document.querySelector('input#searchByID')
+    const input = document.querySelector('#searchByID')
 
     fetch(`http://localhost:3000/movies/${input.value}`)
         .then((response) => response.json())
@@ -13,7 +13,8 @@ const init = () => {
 
             title.innerText = data.title
             summary.innerText = data.summary
-        })    
+        })
+    inputForm.reset() 
   })
 }
 
